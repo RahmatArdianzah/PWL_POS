@@ -1,59 +1,14 @@
-    @extends('layout.app')
+@extends('layout.template')
 
-    {{-- Customize layout sections --}}
-    @section ('subtitle', 'Welcome')
-    @section ('content _header_title', 'Home')
-    @section ('content_header _subtitle', 'Welcome')
+@section('content')
 
-    
-    {{-- Content body: main page content --}}
-    @section ('content_body')
-        <p>
-            Welcome to this beautiful admin panel.
-        </p>
-    @stop
-
-    {{-- Push extra CSS --}}
-    @push('css')
-        {{-- Add here extra stylesheets --}}
-        {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-    @endpush
-
-    {{-- Push extra scripts --}}
-
-    @push('js')
-        <script>console.log("Hi, i'm using the laravel-AdminLTE package!"); </script>
-    @endpush
-
-
-
-
-
-
-
-    {{-- @extends('layout.app') --}}
-
-    {{-- Customize layout sections --}}
-    {{-- @section ('subtitle', 'Welcome') --}}
-    {{-- @section ('content _header_title', 'Home')
-    @section ('content_header _subtitle', 'Welcome') --}}
-
-    {{-- Content body: main page content --}}
-    {{-- @section ('content_body')
-        <p>
-            Welcome to this beautiful admin panel.
-        </p>
-    @stop --}}
-
-    {{-- Push extra CSS --}}
-    {{-- @push('css') --}}
-        {{-- Add here extra stylesheets --}}
-        {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-    {{-- @endpush --}}
-
-    {{-- Push extra scripts --}}
-
-    {{-- @push('js')
-        <script>console.log("Hi, i'm using the laravel-AdminLTE package!"); </script>
-        
-    @endpush --}}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Halo, apakabar!!!</h3>
+    <div class="card-tools"></div>
+  </div>
+  <div class="card-body">
+    Selamat datang semua, ini adalah halaman utama dari aplikasi ini.
+  </div>
+</div>
+@endsection
