@@ -16,18 +16,24 @@ class UserController extends Controller
     //Menampilkan Halaman awal user
     public function index()
     {
-        $breadcrumb = (object) [
+        $breadcrumb = (object)[
             'title' => 'Daftar User',
             'list' => ['Home', 'User']
         ];
-
         $page = (object)[
-            'title' => 'Daftar user yang terdaftar dalam sistem'
+            'title' => 'Daftar User yang terdaftar pada sistem',
         ];
+        $activeMenu = 'user';
 
-        $activeMenu = 'user'; //set menu yang sedang aktif
+        // JS 7 praktikum 4 bagian 1
         $level = LevelModel::all();
-        return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level,  'activeMenu' => $activeMenu]);
+
+        return view('user.index', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'activeMenu' => $activeMenu,
+            'level' => $level
+        ]);
     }
 
     public function list(Request $request)
@@ -50,7 +56,7 @@ class UserController extends Controller
                     '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakit menghapus data ini?\');">Hapus</button></form>';
                 return $btn;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['aksi'])
             ->make(true);
     }
 
